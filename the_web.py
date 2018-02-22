@@ -7,6 +7,9 @@ Displays a built graph from a data file of connections
 with networkx and matplotlib.
 '''
 class Connection_Web():
+    '''
+    Builds a graph based on the input file: file_name.
+    '''
     def build_graph(self, file_name):
         graph = []
         file = open(file_name, 'r')
@@ -18,6 +21,9 @@ class Connection_Web():
                 graph.append((l[0].strip(), c.strip()))
         return graph
 
+    '''
+    Takes a graph as a list of tuples for connections and draws it.
+    '''
     def draw_graph(self, graph):
         nodes = set([n1 for n1, n2 in graph] + [n2 for n1, n2 in graph])
         G = nx.Graph()
