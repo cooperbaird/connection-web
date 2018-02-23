@@ -40,6 +40,7 @@ class Connection_Web():
         nx.draw_networkx_labels(G, pos, font_size=8)
 
         plt.axis("off")
+        plt.subplots_adjust(left=0, bottom=0, right=1, top=1)
         plt.show()
 
 def main():
