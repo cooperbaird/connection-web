@@ -12,13 +12,13 @@ class Connection_Web():
     '''
     def build_graph(self, file_name):
         graph = []
-        file = open(file_name, 'r')
-        for line in file:
-            line = line.rstrip() # strip newline characters
-            l = re.split("[,;:]", line) # split at punct
-            cons = l[1:]
-            for c in cons:
-                graph.append((l[0].strip(), c.strip()))
+        with open(file_name, 'r') as file:
+            for line in file:
+                line = line.rstrip() # strip newline characters
+                l = re.split("[,;:]", line) # split at punct
+                cons = l[1:]
+                for c in cons:
+                    graph.append((l[0].strip(), c.strip()))
         return graph
 
     '''
