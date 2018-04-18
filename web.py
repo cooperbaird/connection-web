@@ -2,6 +2,11 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import re, string
 
+def main():
+    web = Connection_Web()
+    graph = web.build_graph("connections")
+    web.draw_graph(graph)
+
 '''
 Displays a built graph from a data file of connections with
 networkx and matplotlib.
@@ -42,11 +47,6 @@ class Connection_Web():
         plt.axis("off")
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1)
         plt.show()
-
-def main():
-    web = Connection_Web()
-    graph = web.build_graph("connections")
-    web.draw_graph(graph)
 
 if __name__ == "__main__":
     main()
